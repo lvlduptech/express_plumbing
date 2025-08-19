@@ -1,0 +1,179 @@
+/* src/components/Hero.module.css */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: none; /* Video provides background */
+    /* Base mobile padding + Mobile CTA Height + Mobile Header Height */
+    /* Note: Header heights are global vars, section-specific padding is fine here */
+    padding: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 3rem) 0 3rem 0;
+    text-align: center;
+    min-height: 45vh; /* Default min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 3; /* Above video overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure content can be centered */
+  }
+  
+  .heroTitle {
+    font-family: var(--font-main);
+    font-size: 3.5rem; /* Desktop base */
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+  }
+  
+  .heroParagraph {
+    font-family: var(--font-main);
+    font-size: 1.2rem; /* Desktop base */
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+  }
+  
+  /* .heroButton can be used if you need specific overrides for the global .btn.accent */
+  .heroButton {
+    /* padding: 1rem 2.5rem; */ /* Example: if different from global .btn */
+    /* font-size: 1.1rem; */
+  }
+  
+  .videoContainer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1; /* Behind heroContent */
+    overflow: hidden;
+  }
+  
+  .video {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: blur(3px);
+    opacity: 0; /* Animation handles fade-in */
+    animation: fadeVideoAnimation 30s infinite; /* Renamed animation */
+  }
+  
+  @keyframes fadeVideoAnimation { /* Renamed to avoid global conflict */
+     0% { opacity: 0; }
+     8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+   100% { opacity: 0; }
+  }
+  
+  .videoOverlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2; /* Between video and heroContent */
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .logoContainer {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    overflow: hidden;
+    width: 840px;
+    height: 1.3em; /* Relative to .heroTitle font-size */
+    vertical-align: middle;
+    gap: 0.1ch;
+  }
+  
+  .logoText { /* Replaces #logo-text ID styling */
+    display: inline-block;
+    width: 840px; /* User's preferred width for desktop */
+    text-align: left;
+    color: var(--color-primary);
+    white-space: nowrap;
+    font-family: var(--font-main);
+    font-weight: 800;
+    vertical-align: baseline;
+    /* Animation styles (transform, opacity) are handled by JS */
+  }
+  
+  /* --- Mobile Hero Adjustments --- */
+  @media (max-width: 768px) {
+    .hero {
+       padding-top: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 3rem);
+       padding-bottom: 3rem;
+       min-height: 45vh;
+    }
+    .heroTitle,
+    .logoText,
+    .logoContainer > span:first-child { /* Target the static "Express " span */
+        font-size: 2.0rem;
+        line-height: 1.3;
+    }
+    .logoContainer {
+        height: auto; /* Allow height to adjust with wrapping */
+        gap: 0.3ch;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1.1;
+    }
+    .logoText {
+        width: auto;
+        max-width: 90%;
+        text-align: center;
+        flex-basis: auto;
+        margin-top: 0;
+        line-height: inherit;
+    }
+    .heroParagraph {
+        font-size: 0.9rem;
+        max-width: 95%;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+    /* .heroButton styles will inherit from global .btn */
+  }
+  
+  /* Very Small Mobile Screen Adjustments */
+  @media (max-width: 399px) {
+      .heroTitle,
+      .logoText,
+      .logoContainer > span:first-child {
+          font-size: 1.7rem;
+      }
+      .heroParagraph {
+          display: block; /* Keep paragraph visible */
+          font-size: 0.85rem;
+          margin-bottom: 1.2rem;
+      }
+      .hero {
+          padding-top: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 2rem);
+          padding-bottom: 2rem;
+          min-height: 40vh;
+      }
+      /* .heroButton styles will inherit from global .btn */
+  }
+  
+  /* Desktop Hero Adjustments (if different from base .hero) */
+  @media (min-width: 1024px) {
+      .hero {
+          padding-top: calc(var(--header-height-desktop) + 6rem);
+          padding-bottom: 6rem;
+      }
+      .heroTitle { font-size: 3.5rem; } /* Restore desktop size */
+      .logoText { font-size: 3.5rem; width: 260px; text-align: left; } /* Restore desktop width & alignment */
+      .logoContainer > span:first-child { font-size: 3.5rem; }
+      .heroParagraph { font-size: 1.2rem; }
+  }
+  

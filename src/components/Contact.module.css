@@ -1,0 +1,105 @@
+/* src/components/Contact.module.css */
+
+.formContainer { /* Renamed from .contact-form-container */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .info { /* Renamed from .contact-info */
+    /* No specific styles needed here if text inherits correctly */
+  }
+  
+  .info p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-main);
+  }
+  
+  .info i { /* Assuming Font Awesome icons */
+    color: var(--color-primary);
+    margin-right: 0.8rem;
+    width: 20px; /* Ensure consistent icon spacing */
+    text-align: center;
+  }
+  
+  .info h3, .info h4 { /* For "Contact Information" and "Business Hours" */
+      color: var(--color-secondary); /* Match global heading color */
+      font-family: var(--font-main);
+      font-weight: 700;
+      margin-bottom: 1rem;
+  }
+  .info h4 {
+      margin-top: 2rem;
+      font-size: 1.1rem; /* Example size */
+  }
+  
+  
+  .form { /* Renamed from .contact-form */
+    /* No specific styles needed for the form tag itself usually */
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="tel"],
+  .form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  }
+  
+  .form input:focus,
+  .form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px color-mix(in srgb, var(--color-primary) 30%, transparent); /* Use primary color for focus */
+  }
+  
+  .form textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* .form .btn will use global .btn and .btn-secondary styles */
+  /* Add .formButton class if specific overrides are needed */
+  .formButton {
+    width: 100%;
+    padding: 1rem; /* Override global .btn padding if needed */
+    font-size: 1.1rem; /* Override global .btn font-size if needed */
+  }
+  
+  .complianceText { /* Renamed from .compliance-text */
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments for the contact form */
+  @media (max-width: 768px) {
+    .formContainer {
+      grid-template-columns: 1fr; /* Stack on mobile */
+      gap: 2rem;
+    }
+    .info {
+      text-align: center; /* Center info on mobile */
+    }
+  }
+  

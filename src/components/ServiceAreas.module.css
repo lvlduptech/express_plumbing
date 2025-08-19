@@ -1,0 +1,82 @@
+/* src/components/ServiceAreas.module.css */
+
+.serviceAreasSection {
+    background-color: var(--color-secondary); /* Dark blue background */
+    color: rgba(255, 255, 255, 0.8); /* Default light text color for section */
+    /* Global .section class will handle padding: 4rem 0; */
+  }
+  
+  /* Style the main title and subtitle specifically for this section */
+  /* These will use the global .section-title and .section-subtitle for base font size, weight, etc. */
+  /* We only override color here if needed, or ensure global classes are sufficient. */
+  .title { /* Applied to h2 in ServiceAreas.tsx */
+    color: white !important; /* Override global .section-title color */
+  }
+  .subtitle { /* Applied to p in ServiceAreas.tsx */
+    color: rgba(255, 255, 255, 0.8) !important; /* Override global .section-subtitle color */
+  }
+  
+  /* Grid container for the county columns */
+  .grid { /* Renamed from .service-areas-grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem 1.5rem; /* Row and column gap */
+    margin-top: 3rem;
+  }
+  
+  /* Styling for each county column */
+  .column { /* Renamed from .service-area-column */
+    /* No specific styles needed if layout is handled by grid */
+  }
+  
+  .countyTitle { /* Renamed from .service-area-column h4 */
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: white; /* County titles white */
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Underline for county titles */
+  .countyTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-primary); /* Accent color underline */
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .townItem { /* Renamed from .service-area-column li.service-area-item */
+    margin-bottom: 0.6rem;
+  }
+  
+  /* Styling for each location link */
+  .townLink { /* Renamed from .service-area-column .service-area-item a */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8); /* Link color same as default text */
+    font-size: 0.9rem;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .townLink:hover {
+    color: white; /* Brighter white on hover */
+  }
+  
+  /* Icon styling within the link */
+  .townIcon { /* Class for the <i> tag */
+    color: var(--color-primary); /* Icon color */
+    /* fa-fw class and mr-2 for margin are applied in JSX */
+  }
+  

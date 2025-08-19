@@ -1,0 +1,52 @@
+/* src/components/CareersHero.module.css */
+
+.careersHero {
+    background-color: var(--color-secondary); /* Dark blue background */
+    color: white; /* Default text color for this section */
+    text-align: center;
+    padding-top: calc(var(--header-height-desktop) + 4rem);
+    padding-bottom: 4rem;
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white; /* --- ADD THIS LINE --- Ensure title text is white */
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9); /* Explicitly light for subtitle too */
+  }
+  
+  /* Button uses global .btn .btn-accent */
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .careersHero {
+      padding-top: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 2rem);
+      padding-bottom: 2.5rem;
+      min-height: 30vh;
+    }
+    .title {
+      font-size: 2.2rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  

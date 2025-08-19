@@ -1,0 +1,96 @@
+/* src/components/Services.module.css */
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger min-width for cards */
+  gap: 2rem; /* Gap between cards */
+  align-items: stretch; /* Key for making grid items in a row the same height */
+}
+
+.featureLinkWrapper {
+  display: flex; /* Make the Link (<a> tag) a flex container */
+  flex-direction: column; /* Ensure its children stack and can stretch */
+  height: 100%; /* Make the Link take the full height of the grid cell */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+  border-radius: 10px; /* Apply border-radius to the link wrapper if AnimateOnScroll doesn't have one */
+  overflow: hidden; /* Ensure content respects border-radius */
+}
+
+.featureItem { /* This class is on the AnimateOnScroll component */
+  background-color: var(--color-card-bg);
+  padding: 2rem 1.5rem; /* Adjusted padding */
+  border-radius: 10px; /* Keep border-radius here if AnimateOnScroll is the visual card */
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  /* overflow: hidden; /* Already on featureLinkWrapper */
+
+  /* MODIFICATIONS FOR EQUAL HEIGHT & INTERNAL LAYOUT */
+  display: flex;          /* Make the card a flex container */
+  flex-direction: column; /* Stack content (icon, title, description) vertically */
+  align-items: center;    /* Center content horizontally */
+  text-align: center;     /* Center text within block elements */
+  height: 100%;           /* Make the card take the full height of its Link wrapper */
+  width: 100%;            /* Ensure it takes full width of its Link wrapper */
+  flex-grow: 1;           /* Allow this item to grow if its parent (.featureLinkWrapper) is a flex container */
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* .featureContent class is removed from JSX, styles are merged into .featureItem or applied directly to children */
+
+.iconWrapper {
+  display: inline-block; /* Allows margin auto and text-align center to work */
+  font-size: 2.8rem; /* Slightly reduced icon size for balance */
+  margin-bottom: 1.25rem; /* Adjusted margin */
+  color: var(--color-secondary);
+  transition: transform var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out;
+  line-height: 1; /* Helps with consistent icon alignment */
+}
+/* No need for .featureItem:hover .iconWrapper svg specific color change if iconWrapper itself changes color */
+.featureItem:hover .iconWrapper {
+  transform: rotate(10deg) scale(1.05); /* Subtle hover effect */
+  color: var(--color-primary);
+}
+
+.featureTitle { /* For the H3 */
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.3rem; /* Adjusted font size */
+  margin-bottom: 0.75rem; /* Adjusted margin */
+  color: var(--color-secondary);
+  flex-shrink: 0; /* Prevent title from shrinking */
+}
+html.dark .featureTitle {
+  color: var(--color-text-dark); /* Or a specific dark mode heading color */
+}
+
+
+.featureDescription { /* For the P tag */
+  font-family: var(--font-main);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex-grow: 1;   /* Crucial: Allows description to take available vertical space */
+  flex-basis: 0;  /* Ensures flex-grow works from a zero baseline if content is short */
+  width: 100%;    /* Ensures it uses the full width for text alignment */
+  margin-bottom: 0; /* Flexbox will handle spacing; or add a small fixed margin if needed */
+}
+
+/* Optional: Styling for a "Learn More" text if you add it inside .featureItem */
+/*
+.learnMoreText {
+  margin-top: auto; // Pushes this to the bottom of the card
+  padding-top: 1rem; // Space above it
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none; // If it's not part of the main link
+}
+.featureItem:hover .learnMoreText {
+  text-decoration: underline;
+}
+*/

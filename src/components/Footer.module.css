@@ -1,0 +1,204 @@
+/* src/components/Footer.module.css */
+
+/* General Footer Styling */
+.footerLayout { /* Renamed from .footer.new-footer-layout */
+    background-color: var(--color-secondary);
+    color: rgba(255, 255, 255, 0.7); /* Slightly muted white text */
+    padding: 3rem 0 2rem 0;
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+  }
+  
+  .footerLayout a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .footerLayout a:hover {
+    color: white;
+  }
+  
+  /* Top Section (Logo/Copyright) */
+  .topSection { /* Renamed from .footer-top */
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo { /* Renamed from .footer-logo */
+    max-width: 200px; /* Adjust as needed */
+    height: auto;
+    margin: 0 auto 0.5rem auto; /* Center logo and add bottom margin */
+    filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+    /* Remove filter if your logo is already light/white */
+  }
+  
+  .copyright { /* Renamed from .footer-copyright */
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Separator Lines */
+  .separator { /* Renamed from .footer-separator */
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); /* Faint white line */
+    margin: 2rem 0;
+  }
+  
+  /* Middle Section (Columns) */
+  .middleContent { /* Renamed from .footer-middle-content */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 2rem 1.5rem;
+    margin-bottom: 2rem; /* Space before bottom separator */
+  }
+  
+  /* General Column Styling */
+  .column { /* Renamed from .footer-column */
+    /* Add padding or specific alignment if needed */
+  }
+  
+  .column h4 { /* If you add headings back to columns */
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .column li { /* Targeting li directly */
+    margin-bottom: 0.75rem; /* Spacing between links */
+  }
+  
+  .column li a { /* Styling for nav/social links */
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .column li a i { /* Icon specific styling - assuming Font Awesome */
+    color: var(--color-primary); /* Accent color for icons */
+    /* fa-fw class and mr-2 for margin are applied in JSX */
+  }
+  
+  /* Newsletter Styles */
+  .newsletterIntro { /* Renamed from .newsletter-intro */
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: white;
+  }
+  .newsletterForm { /* Renamed from .newsletter-form */
+    display: flex;
+    flex-wrap: wrap; /* Allow button to wrap on small screens */
+    gap: 0.5rem;
+  }
+  .newsletterForm input[type="email"] {
+    flex-grow: 1; /* Take available space */
+    padding: 0.6rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    min-width: 150px; /* Prevent input becoming too small */
+  }
+  .newsletterForm input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .newsletterForm input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .newsletterButton { /* Renamed from .btn-newsletter */
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-accent); /* Use accent color (orange) */
+    color: white;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  .newsletterButton:hover {
+    background-color: color-mix(in srgb, var(--color-accent) 90%, black);
+  }
+  
+  /* License Info Styles */
+  .licenseInfo { /* Renamed from .license-info */
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+  }
+  
+  /* Bottom Section (Call/Slogan) */
+  .bottomExtra { /* Renamed from .footer-bottom-extra */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    gap: 1rem;
+    padding-top: 2rem; /* Space above after separator */
+  }
+  
+  .callInfo { /* Renamed from .footer-call */
+    text-align: left;
+  }
+  .callToday { /* Renamed from .footer-call .call-today */
+    display: block;
+    font-size: 1.2rem; /* Larger text */
+    font-weight: 700;
+    color: var(--color-accent); /* Accent color (like example) */
+    margin-bottom: 0.25rem;
+  }
+  .callInfo a { /* Renamed from .footer-call a */
+    display: block; /* Phone numbers on separate lines */
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+  .callInfo a:hover {
+    color: var(--color-primary);
+  }
+  
+  .slogan { /* Renamed from .footer-slogan */
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-align: right;
+  }
+  
+  /* Responsive adjustments for columns if needed */
+  @media (max-width: 768px) {
+    .middleContent {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust minmax for better fit */
+    }
+    .column {
+      margin-bottom: 1rem; /* Add some space between stacked columns */
+    }
+    .column:last-child {
+      margin-bottom: 0;
+    }
+    .bottomExtra {
+      flex-direction: column;
+      text-align: center;
+    }
+    .callInfo, .slogan {
+      text-align: center;
+      width: 100%;
+    }
+    .slogan {
+      margin-top: 1rem;
+    }
+  }
+  

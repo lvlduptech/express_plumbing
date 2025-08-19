@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  location    String
+  jobType     String
+  department  String
+  excerpt     String
+  description String?
+  requirements String?
+  benefits    String?
+  salary      String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  applications JobApplication[]
+
+  @@map("jobs")
+}
+
+model JobApplication {
+  id                    String   @id @default(cuid())
+  jobId                 String
+  
+  // Basic Information
+  firstName             String
+  lastName              String
+  email                 String
+  phone                 String?
+  dateOfBirth           String?
+  
+  // Address Information
+  streetAddress         String?
+  city                  String?
+  state                 String?
+  zipCode               String?
+  
+  // Availability
+  availabilityType      String?  // Full time, Part time, Shift work, Temporary
+  mondayAvailable       Boolean  @default(false)
+  tuesdayAvailable      Boolean  @default(false)
+  wednesdayAvailable    Boolean  @default(false)
+  thursdayAvailable     Boolean  @default(false)
+  fridayAvailable       Boolean  @default(false)
+  saturdayAvailable     Boolean  @default(false)
+  sundayAvailable       Boolean  @default(false)
+  
+  // Employment Questions
+  hasReliableTransportation Boolean @default(false)
+  canTravel                 Boolean @default(false)
+  canRelocate               Boolean @default(false)
+  isAtLeast18               Boolean @default(false)
+  canProvideWorkAuth        Boolean @default(false)
+  canPerformJobFunctions    Boolean @default(false)
+  
+  // Files and Additional Info
+  coverLetter           String?
+  resumeUrl             String?
+  resumeFileName        String?
+  
+  // Signature and Agreement
+  digitalSignature      String?
+  agreementAccepted     Boolean  @default(false)
+  
+  status                ApplicationStatus @default(PENDING)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("job_applications")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWED
+  ACCEPTED
+  REJECTED
+}

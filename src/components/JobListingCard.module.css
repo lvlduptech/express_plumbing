@@ -1,0 +1,84 @@
+/* src/components/JobListingCard.module.css */
+
+.card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem; /* For spacing if used in a direct list, less relevant in grid */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* --- ADD THIS LINE to make card fill its parent (AnimateOnScroll div) --- */
+  }
+  
+  .card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .title a {
+    color: inherit; /* Inherit color from h3 */
+    text-decoration: none;
+  }
+  
+  .title a:hover {
+    color: var(--color-primary); /* Change color on hover */
+  }
+  
+  .meta {
+    display: flex;
+    flex-wrap: wrap; /* Allow meta items to wrap on small screens */
+    gap: 0.5rem 1rem; /* Row and column gap */
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .meta span {
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+  }
+  
+  .metaIcon {
+    margin-right: 0.3rem;
+    font-size: 1.1em; /* Relative to parent font size */
+    color: var(--color-primary); /* Icon color */
+  }
+  
+  .excerpt {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex-grow: 1; /* Allows excerpt to take available space, pushing link to bottom */
+  }
+  
+  .detailsLink {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+    align-self: flex-start; /* Align link to the start of the flex item */
+    margin-top: auto; /* Push to bottom if excerpt doesn't fill all space */
+  }
+  
+  .detailsLink:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+  
+  .detailsLink svg { /* For Iconify icon alignment */
+      vertical-align: middle;
+  }
+  

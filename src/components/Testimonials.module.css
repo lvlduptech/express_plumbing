@@ -1,0 +1,180 @@
+/* Testimonials.module.css */
+
+.testimonialsSection {
+  background-color: var(--color-card-bg, #f8f9fa);
+  color: var(--color-text, #212529);
+  border-top: 1px solid var(--color-border, #dee2e6);
+  border-bottom: 1px solid var(--color-border, #dee2e6);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+:global(.section-title).testimonialsSectionTitle,
+.testimonialsSection .section-title {
+  color: var(--color-secondary, #007bff) !important;
+  margin-bottom: 0.75rem;
+}
+:global(.section-subtitle).testimonialsSectionSubtitle,
+.testimonialsSection .section-subtitle {
+  color: var(--color-text-muted, #6c757d) !important;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+}
+
+.loadingState, .errorState {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-muted, #6c757d);
+  font-size: 1.1rem;
+  background-color: var(--color-background, #fff);
+  border-radius: 8px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px; 
+  margin: 0 auto; 
+}
+.errorState p { margin-bottom: 0.5rem; }
+.errorState p:last-child { margin-bottom: 0; }
+
+.reviewsGrid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  grid-template-columns: 1fr; /* Mobile first: 1 column */
+}
+
+@media (min-width: 768px) {
+  .reviewsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Or if you strictly want 3: grid-template-columns: repeat(3, 1fr); */
+  }
+}
+
+.reviewCard {
+  background-color: var(--color-background-light, #ffffff);
+  color: var(--color-text, #212529);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  min-height: 280px; 
+}
+.reviewCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* NEW: Author Header Section */
+.authorHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Space between author header and content text */
+  flex-shrink: 0; 
+}
+
+.authorImage {
+  border-radius: 50%;
+  margin-right: 0.85rem;
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-border, #dee2e6);
+}
+.authorInitial {
+  /* width and height set inline in TSX if different from authorImage */
+  border-radius: 50%;
+  background-color: var(--color-secondary, #007bff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size and font-weight can be adjusted here or inline */
+  margin-right: 0.85rem;
+  flex-shrink: 0;
+}
+
+.authorInfo { /* Container for name and rating */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.authorName {
+  font-family: var(--font-main, sans-serif);
+  font-weight: 600;
+  margin-bottom: 0.2rem; /* Space between name and rating */
+  font-size: 1rem; 
+  color: var(--color-text, #212529);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.authorName a { color: inherit; text-decoration: none; }
+.authorName a:hover { color: var(--color-primary, #007bff); }
+
+.rating { /* Rating directly under author name */
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem; 
+}
+.rating svg {
+  margin-right: 3px; 
+  width: 1em;
+  height: 1em;
+}
+.starFilled { color: var(--color-accent, #ffc107); }
+.starEmpty { color: var(--color-border, #ced4da); }
+
+
+/* Content section (below authorHeader) */
+.content {
+  font-family: var(--font-main, sans-serif);
+  color: var(--color-text-muted, #6c757d);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  flex-grow: 1; /* This will push the reviewFooter to the bottom */
+  margin-bottom: 1rem; /* Space before the footer separator */
+}
+.content p {
+    margin-bottom: 0;
+}
+
+.readMoreLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary, #007bff);
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+.readMoreLink:hover {
+  text-decoration: underline;
+}
+
+/* NEW: Review Footer for "via Google" and separator */
+.reviewFooter {
+  margin-top: auto; /* Pushes this to the bottom of the card */
+  padding-top: 0.75rem; /* Space above the text */
+  border-top: 1px solid var(--color-border-light, #f0f0f0); /* The separator bar */
+  text-align: right; /* Or left, or center as you prefer */
+}
+
+.reviewSource { /* Styling for "via Google" text */
+  font-size: 0.75rem; /* Slightly larger than before for better readability */
+  color: var(--color-text-muted, #6c757d);
+  font-style: italic; /* Optional: make it italic */
+}

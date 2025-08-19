@@ -1,0 +1,116 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/CareersHero.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/* src/components/CareersHero.module.css */
+
+.CareersHero_careersHero__4RbhT {
+    background-color: var(--color-secondary); /* Dark blue background */
+    color: white; /* Default text color for this section */
+    text-align: center;
+    padding-top: calc(var(--header-height-desktop) + 4rem);
+    padding-bottom: 4rem;
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .CareersHero_heroContent__fe9GP {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .CareersHero_title___VF2E {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white; /* --- ADD THIS LINE --- Ensure title text is white */
+  }
+  
+  .CareersHero_subtitle__dBS_x {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9); /* Explicitly light for subtitle too */
+  }
+  
+  /* Button uses global .btn .btn-accent */
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .CareersHero_careersHero__4RbhT {
+      padding-top: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 2rem);
+      padding-bottom: 2.5rem;
+      min-height: 30vh;
+    }
+    .CareersHero_title___VF2E {
+      font-size: 2.2rem;
+    }
+    .CareersHero_subtitle__dBS_x {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/WhyWorkWithUs.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/* src/components/WhyWorkWithUs.module.css */
+
+.WhyWorkWithUs_whyWorkSection__IMGbU {
+    background-color: var(--color-card-bg); /* Light card background for contrast */
+    /* Global .section will handle padding */
+  }
+  
+  /* .title and .subtitle will use global .section-title and .section-subtitle */
+  
+  .WhyWorkWithUs_benefitsGrid__Sgk2f {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Gap between cards */
+    margin-top: 3rem; /* Space below subtitle */
+  }
+  
+  .WhyWorkWithUs_benefitCard__wzsTD {
+    background-color: var(--color-background); /* White/dark background for cards */
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .WhyWorkWithUs_benefitCard__wzsTD:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .WhyWorkWithUs_iconWrapper__r1xfd {
+    display: inline-flex; /* To center icon if using padding/margin */
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem; /* Icon size */
+    color: var(--color-primary); /* Primary color for icons */
+    margin-bottom: 1rem;
+    /* Optional: if you want a background circle for icons */
+    /* width: 70px; */
+    /* height: 70px; */
+    /* background-color: color-mix(in srgb, var(--color-primary) 15%, transparent); */
+    /* border-radius: 50%; */
+  }
+  
+  .WhyWorkWithUs_benefitTitle__egx4p {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .WhyWorkWithUs_benefitDescription__JM5pE {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  

@@ -1,0 +1,107 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/JobDetailDisplay.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+/* src/components/JobDetailDisplay.module.css */
+
+.JobDetailDisplay_jobDetailContainer__uic9o {
+  padding-top: 2rem; /* Add some space from the header */
+  padding-bottom: 3rem;
+}
+
+.JobDetailDisplay_header__LB3u5 {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 0.5rem; /* Space between title and other elements */
+}
+
+.JobDetailDisplay_backLink__0YZEh {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem; /* Space below the back link */
+}
+
+.JobDetailDisplay_title__N1ByW {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem; /* Space below title */
+  line-height: 1.2;
+}
+
+.JobDetailDisplay_applyButton__1Qtao {
+  width: fit-content;
+  font-size: 0.8rem;
+  margin: .75rem 0;
+
+
+}
+
+.JobDetailDisplay_meta__B1dPc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem; /* Row and column gap */
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.JobDetailDisplay_meta__B1dPc span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.JobDetailDisplay_metaIcon__22a1A {
+  margin-right: 0.4rem;
+  font-size: 1.2em; /* Relative to parent font size */
+  color: var(--color-primary);
+}
+
+.JobDetailDisplay_contentSection__QmYyU {
+  margin-bottom: 2.5rem;
+}
+
+.JobDetailDisplay_sectionTitle__p4iyS {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block; /* So border only spans text width */
+}
+
+.JobDetailDisplay_descriptionText__00C5h {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.JobDetailDisplay_list__k7nhU {
+  list-style: disc;
+  margin-left: 1.5rem; /* Indent list */
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.JobDetailDisplay_list__k7nhU li {
+  margin-bottom: 0.6rem;
+}
+
+.JobDetailDisplay_applySection__PMArg {
+  margin-top: 3rem;
+  text-align: center; /* Center the apply button */
+}
+
+/* Larger apply button - uses global .btn .btn-accent and can be extended */
+/* .btn-lg class can be global or defined here if specific to job apply */
+/* Example of a global .btn-lg if you want it: */
+/*
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+*/
+

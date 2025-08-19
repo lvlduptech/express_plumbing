@@ -1,0 +1,166 @@
+/* src/components/Header.module.css */
+
+.header {
+    background-color: var(--color-background);
+    padding: 1rem 0;
+    position: fixed;
+    /* top is set dynamically via inline style in Header.tsx */
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Ensure header is on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: top var(--transition-speed) ease, background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    height: var(--header-height-mobile); /* Use mobile height variable by default */
+  }
+  
+  /* If you need to apply 'position: relative' dynamically via JS, you can add this class */
+  .relativePosition {
+    position: relative;
+  }
+  
+  .container { /* Specific to header's container if different from global */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    /* Global .container class will handle max-width, margin, padding */
+  }
+  
+  .logoLink {
+      flex-shrink: 0;
+  }
+  
+  .logoImage {
+    width: 62px;
+    height: auto;
+    display: block;
+  }
+  
+  /* --- Mobile First: Hide Desktop elements, Show Mobile Toggle --- */
+  .desktopNav,
+  .desktopButton {
+    display: none; /* Hide by default */
+  }
+  
+  .menuToggle {
+    display: block; /* Show by default */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto; /* Push to the right */
+  }
+  
+  /* --- Mobile Dropdown Styles --- */
+  .mobileDropdown {
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    z-index: 9998; /* Below header but above content */
+    background-color: var(--color-background);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--color-border);
+    max-height: calc(100vh - var(--cta-bar-height-mobile) - var(--header-height-mobile)); /* Limit height */
+    overflow-y: auto; /* Scroll if needed */
+  }
+  
+  .mobileNavList {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mobileNavItem {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobileNavLink {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-text);
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border);
+  }
+  /* Keep border on last link before button if it's a link */
+  .mobileNavList li:last-of-type:not(.mobileNavButtonItem) .mobileNavLink {
+    /* border-bottom: none; */ /* Example if last item is always a link */
+  }
+  .mobileNavLink:hover {
+    background-color: var(--color-card-bg);
+    color: var(--color-primary);
+  }
+  
+  .mobileNavButtonItem {
+    padding: 1rem;
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+  }
+  /* .mobileNavButton will be combined with global .btn .btn-primary in component */
+  
+  
+  /* --- Desktop Header Styles (Overrides) --- */
+  @media (min-width: 1024px) { /* lg breakpoint */
+    .header {
+        height: var(--header-height-desktop); /* Use desktop height */
+    }
+    .menuToggle {
+      display: none;
+    }
+    .desktopNav {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 1.5rem;
+    }
+    .desktopButton {
+      display: block;
+    }
+  
+    .navLinks { /* Class for the UL element */
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navLinks li {
+      margin-left: 1.5rem;
+    }
+    .navLinks li:first-child {
+        margin-left: 0;
+    }
+    .navLinks a {
+      font-family: var(--font-main);
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 600;
+      padding-bottom: 0.3rem;
+      position: relative;
+    }
+    .navLinks a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-primary);
+      transition: width var(--transition-speed) ease;
+    }
+    .navLinks a:hover::after,
+    .navLinks a.active { /* Assuming 'active' class is passed from component for pathname match */
+      width: 100%;
+    }
+    /* Mobile dropdown should be hidden by React conditional rendering,
+       but this is a CSS backup. */
+    .mobileDropdown {
+        display: none !important;
+    }
+  }
+  

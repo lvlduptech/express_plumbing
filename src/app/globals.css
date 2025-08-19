@@ -1,0 +1,278 @@
+/* src/app/globals.css */
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Define CSS Variables */
+:root {
+  /* Theme Colors */
+  --color-primary-light: #4bc2e2;
+  --color-secondary-light: #020381;
+  --color-accent-light: orange;
+  --color-background-light: #ffffff;
+  --color-text-light: #333333;
+  --color-text-muted-light: #666666;
+  --color-border-light: #e0e0e0;
+  --color-card-bg-light: #f8f9fa;
+
+  --color-primary-dark: #4bc2e2;
+  --color-secondary-dark: #8ea4ff;
+  --color-accent-dark: orange;
+  --color-background-dark: #1a1a2e;
+  --color-text-dark: #e0e0e0;
+  --color-text-muted-dark: #a0a0a0;
+  --color-border-dark: #3a3a5e;
+  --color-card-bg-dark: #2a2a4e;
+
+  /* Font Variable (Using Inter loaded via layout.tsx) */
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Enhanced Fallback */
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+
+  /* Default Theme (Light) - Variables are overridden by html.dark */
+  --color-primary: var(--color-primary-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-accent: var(--color-accent-light);
+  --color-background: var(--color-background-light);
+  --color-text: var(--color-text-light);
+  --color-text-muted: var(--color-text-muted-light);
+  --color-border: var(--color-border-light);
+  --color-card-bg: var(--color-card-bg-light);
+
+  /* Fixed Header Heights */
+  --header-height-desktop: 80px;
+  --cta-bar-height-mobile: 60px; /* Approximate height based on padding/font */
+  --header-height-mobile: 50px;
+}
+
+html.dark {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-accent: var(--color-accent-dark);
+  --color-background: var(--color-background-dark);
+  --color-text: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted-dark);
+  --color-border: var(--color-border-dark);
+  --color-card-bg: var(--color-card-bg-dark);
+}
+
+
+/* Base Body Styles */
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-weight: 400; /* Default body weight */
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  overflow-x: hidden;
+   /* Padding-top is now handled by the first main content section (e.g., Hero.module.css) */
+}
+main {
+  padding-top: var(--header-height-desktop);
+}
+
+/* Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--color-secondary); /* Default heading color */
+  line-height: 1.3;
+}
+/* Specific heading colors might be overridden in modules or theme classes */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+    /* color: var(--color-text-dark); */ /* Or keep as secondary if preferred */
+}
+
+
+/* Base link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.section { /* Basic structural padding for sections */
+  padding: 4rem 0;
+}
+.section-title { /* General styling for section titles */
+  font-family: var(--font-main);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-subtitle { /* General styling for section subtitles */
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  text-align: center;
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--color-secondary) 90%, black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+.btn-accent:hover {
+  background-color: color-mix(in srgb, var(--color-accent) 90%, black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile CTA Bar Styles (Could be a CSS Module for MobileCTA.tsx) */
+.mobile-cta-bar {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001; /* Above header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: var(--cta-bar-height-mobile); /* Use variable */
+}
+.mobile-cta-bar .btn {
+  flex-grow: 1;
+  margin: 0 0.5rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+@media (min-width: 769px) {
+  .mobile-cta-bar {
+    display: none;
+  }
+}
+
+/* Back to Top Button Styles (Could be a CSS Module for BackToTop.tsx) */
+.back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem; background-color: var(--color-primary);
+  color: white; width: 50px; height: 50px; border-radius: 50%;
+  display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
+  text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease,
+              transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+  z-index: 998;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background-color: var(--color-secondary); }
+
+/* Theme Toggle Styles (Could be a CSS Module for ThemeToggle.tsx) */
+.theme-toggle {
+  position: fixed; top: calc(var(--header-height-desktop) + 1rem); right: 1.5rem; /* Adjusted for desktop header height */
+  background-color: var(--color-card-bg); border: 1px solid var(--color-border);
+  border-radius: 50%; width: 40px; height: 40px; display: flex;
+  justify-content: center; align-items: center; cursor: pointer; z-index: 1001;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.theme-toggle i { font-size: 1.2rem; color: var(--color-secondary); transition: color var(--transition-speed) ease; /* Assumes FA icon */ }
+.theme-toggle:hover { background-color: var(--color-border); }
+.theme-toggle:hover i { color: var(--color-primary); /* Assumes FA icon */ }
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: calc(var(--cta-bar-height-mobile) + var(--header-height-mobile) + 1rem); /* Adjusted for mobile header + CTA */
+    right: 1rem;
+  }
+}
+
+/* --- Job Listings Grid on Careers Page --- */
+.open-positions-section {
+  /* Styles for the overall section containing job listings */
+  /* background-color: var(--color-card-bg); */ /* Example if you want a different bg */
+}
+
+.job-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Gap between job cards */
+}
+
+/* --- REMOVED STYLES FOR: --- */
+/* - Header (moved to Header.module.css) */
+/* - Hero (moved to Hero.module.css) */
+/* - Features/Services (moved to Services.module.css) */
+/* - Process (moved to Process.module.css) */
+/* - Testimonials (moved to Testimonials.module.css) */
+/* - Secondary CTA/Membership (moved to MembershipCTA.module.css) */
+/* - Service Areas Section (moved to ServiceAreas.module.css) */
+/* - Contact Form (moved to Contact.module.css) */
+/* - Footer New Layout (moved to Footer.module.css) */
+
+/* --- Any remaining truly global media queries or specific layout adjustments --- */
+/* Example: Mobile Hero text size adjustments if not fully handled in Hero.module.css */
+@media (max-width: 768px) {
+  /* Original mobile hero adjustments were moved to Hero.module.css */
+  /* This block can be used for other global mobile overrides if needed */
+  .contact-form-container { grid-template-columns: 1fr; gap: 2rem; } /* Example from old contact styles */
+  .contact-info { text-align: center; } /* Example from old contact styles */
+}
+
+@media (max-width: 399px) {
+  main {
+  padding-top: var(--header-height-mobile);
+}
+  /* Original small mobile hero adjustments were moved to Hero.module.css */
+}
+
+/* Removed Scroll Animation CSS as it's handled by AnimateOnScroll component */

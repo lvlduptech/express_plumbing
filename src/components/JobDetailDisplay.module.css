@@ -1,0 +1,103 @@
+/* src/components/JobDetailDisplay.module.css */
+
+.jobDetailContainer {
+  padding-top: 2rem; /* Add some space from the header */
+  padding-bottom: 3rem;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 0.5rem; /* Space between title and other elements */
+}
+
+.backLink {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem; /* Space below the back link */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem; /* Space below title */
+  line-height: 1.2;
+}
+
+.applyButton {
+  width: fit-content;
+  font-size: 0.8rem;
+  margin: .75rem 0;
+
+
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem; /* Row and column gap */
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.metaIcon {
+  margin-right: 0.4rem;
+  font-size: 1.2em; /* Relative to parent font size */
+  color: var(--color-primary);
+}
+
+.contentSection {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block; /* So border only spans text width */
+}
+
+.descriptionText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.list {
+  list-style: disc;
+  margin-left: 1.5rem; /* Indent list */
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.list li {
+  margin-bottom: 0.6rem;
+}
+
+.applySection {
+  margin-top: 3rem;
+  text-align: center; /* Center the apply button */
+}
+
+/* Larger apply button - uses global .btn .btn-accent and can be extended */
+/* .btn-lg class can be global or defined here if specific to job apply */
+/* Example of a global .btn-lg if you want it: */
+/*
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+*/

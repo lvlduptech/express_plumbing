@@ -1,0 +1,425 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/services/[slug]/ServiceDetail.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+/* src/app/services/[slug]/ServiceDetail.module.css */
+
+/* --- OVERALL PAGE WRAPPER --- */
+.ServiceDetail_serviceDetailPageWrapper__m6RP3 {
+  background-color: var(--color-background); /* Or a very light grey like #f9fafb for a subtle off-page bg */
+}
+
+/* --- HERO SECTION (Matched to CareersHero) --- */
+.ServiceDetail_hero__1UNBN {
+  background-color: var(--color-secondary); /* Match CareersHero background */
+  color: white;                             /* Match CareersHero text color */
+  text-align: center;
+  padding: 5rem 1.5rem 4rem 1.5rem; /* top, horizontal, bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 35vh; /* Ensures some vertical space */
+  position: relative; /* For potential breadcrumbs absolute positioning */
+}
+.ServiceDetail_heroContentWrapper__OdOVh { /* To constrain width of hero text content */
+  max-width: 800px;
+  width: 100%;
+}
+.ServiceDetail_heroTitle__b_nFi { /* This is the H1 */
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.ServiceDetail_heroSubtitle__t7eP_ {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 1; /* Opacity is handled by color's alpha */
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px; /* Constrain subtitle width */
+  margin-left: auto;
+  margin-right: auto;
+}
+.ServiceDetail_heroCtaButton__ZKUxM { /* For "Schedule Service" button in hero */
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  /* Uses global .btn .btn-accent */
+}
+
+/* --- BREADCRUMBS (Optional Styling) --- */
+.ServiceDetail_breadcrumbs__BR0QJ {
+  width: 100%;
+  text-align: center; /* Or left */
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  padding-top: 1rem; /* If inside hero padding */
+}
+.ServiceDetail_breadcrumbs__BR0QJ a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.ServiceDetail_breadcrumbs__BR0QJ a:hover {
+  color: white;
+}
+.ServiceDetail_breadcrumbs__BR0QJ span { /* For separators like '>' */
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- TWO-COLUMN PAGE LAYOUT CONTAINER --- */
+.ServiceDetail_pageLayoutContainer__PClEb {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem; /* Gap between main content and sidebar */
+  padding-top: 3rem; /* Space from hero */
+  padding-bottom: 4rem;
+}
+
+/* --- MAIN CONTENT AREA (Left Column) --- */
+.ServiceDetail_mainContentArea__CNpN4 {
+  flex: 3; /* Takes up more space */
+  min-width: 0; /* Prevents overflow issues with flex items */
+}
+.ServiceDetail_serviceContentArticle__CJHs7 {
+  background-color: var(--color-background-light); /* White or very light card background */
+  padding: 2.5rem 3rem; /* Generous padding inside the article */
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06); /* Softer, more spread shadow */
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_serviceContentArticle__CJHs7 {
+  background-color: var(--color-card-bg-dark);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.18);
+}
+
+/* --- TITLE UNDER HERO (in main content) --- */
+.ServiceDetail_mainContentHeader__jyvxI {
+  padding-bottom: 1.5rem; /* Space after this title block */
+  margin-bottom: 2rem; /* Space before the next section (introduction) */
+  border-bottom: 1px solid var(--color-border);
+  text-align: left; /* Or 'center' if you prefer */
+}
+.ServiceDetail_mainContentTitle__h7rpc { /* This is an H2 */
+  font-size: 2.2rem; /* Prominent, like an H1 visually */
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem; /* Space before potential lead paragraph */
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_mainContentTitle__h7rpc {
+  color: var(--color-secondary-dark);
+}
+/* Optional: Lead paragraph style if you add one
+.mainContentLead {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+*/
+
+/* --- SIDEBAR (Right Column) --- */
+.ServiceDetail_sidebar__25JGl {
+  flex: 1;
+  min-width: 240px; /* Min width for the sidebar */
+  max-width: 320px; /* Max width for the sidebar */
+}
+.ServiceDetail_sidebarStickyContent__Lyi6t {
+  position: sticky;
+  top: calc(var(--header-height-desktop) + 2rem); /* Uses value from your globals.css */
+  padding: 1.5rem;
+  background-color: var(--color-card-bg); /* Matches global card background */
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_sidebarStickyContent__Lyi6t {
+  background-color: var(--color-card-bg-dark);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.ServiceDetail_sidebarStickyContent__Lyi6t h4 { /* For "On This Page" */
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_sidebarStickyContent__Lyi6t h4 {
+  color: var(--color-secondary-dark);
+}
+.ServiceDetail_sidebarNav__uM8ph {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ServiceDetail_sidebarNav__uM8ph li a {
+  display: block;
+  padding: 0.6rem 0.25rem; /* Added a bit of horizontal padding */
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s ease, padding-left 0.2s ease, font-weight 0.2s ease;
+  border-radius: 4px; /* Subtle rounding for hover/active state */
+}
+.ServiceDetail_sidebarNav__uM8ph li:last-child a {
+  border-bottom: none;
+}
+.ServiceDetail_sidebarNav__uM8ph li a:hover {
+  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  padding-left: 0.75rem;
+}
+.ServiceDetail_sidebarNav__uM8ph li a.ServiceDetail_activeSidebarLink___HkGc { /* Class for active link */
+  color: var(--color-primary);
+  font-weight: 600; /* Bolder active link */
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  padding-left: 0.75rem; /* Indent active link */
+  border-left: 3px solid var(--color-primary); /* Active indicator */
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_sidebarNav__uM8ph li a:hover {
+  background-color: color-mix(in srgb, var(--color-primary-dark) 15%, transparent);
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_sidebarNav__uM8ph li a.ServiceDetail_activeSidebarLink___HkGc {
+  background-color: color-mix(in srgb, var(--color-primary-dark) 20%, transparent);
+  border-left-color: var(--color-primary-dark);
+}
+
+
+/* --- INTRODUCTION & PRIMARY CTA --- */
+.ServiceDetail_introductionSection__Ltk0e {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-top: 0; /* Adjusted as mainContentHeader provides top spacing */
+}
+.ServiceDetail_introductionText__Qx_NJ {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+.ServiceDetail_primaryCallToActionBox__78pCx {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent); /* Lighter primary tint */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_primaryCallToActionBox__78pCx {
+  background-color: color-mix(in srgb, var(--color-primary-dark) 20%, var(--color-card-bg-dark));
+}
+.ServiceDetail_primaryCallToActionBox__78pCx p {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+.ServiceDetail_ctaPhoneNumber__yxgtw {
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  color: var(--color-secondary) !important; /* Or var(--color-primary) */
+  margin-bottom: 1.25rem !important;
+}
+.ServiceDetail_ctaPhoneNumber__yxgtw a {
+  color: inherit;
+  text-decoration: none;
+}
+.ServiceDetail_ctaPhoneNumber__yxgtw a:hover {
+  text-decoration: underline;
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_ctaPhoneNumber__yxgtw {
+  color: var(--color-primary-dark) !important;
+}
+
+/* --- GENERAL CONTENT BLOCK STYLING --- */
+.ServiceDetail_contentBlock__jZ_7D {
+  margin-bottom: 2.5rem; /* Spacing between sections */
+}
+.ServiceDetail_blockTitle__fz1gv { /* H2s within main content */
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block; /* Border only under text */
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_blockTitle__fz1gv {
+  color: var(--color-secondary-dark);
+  border-bottom-color: var(--color-primary-dark);
+}
+.ServiceDetail_blockDescription__P_PsR { /* Paragraphs directly under a blockTitle */
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* --- LIST STYLING --- */
+.ServiceDetail_list__t8Yeg {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+}
+.ServiceDetail_listItem__WtzOk {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: flex-start;
+}
+.ServiceDetail_listIcon__4xYis {
+  color: var(--color-primary);
+  margin-right: 0.85rem;
+  font-size: 1.3em; /* Relative to parent font size */
+  margin-top: 0.1em; /* Fine-tune vertical alignment */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+.ServiceDetail_twoColumnList__t16sl {
+  columns: 1; /* Default to 1 column */
+}
+@media (min-width: 600px) { /* Enable 2 columns when main content area is wide enough */
+  .ServiceDetail_twoColumnList__t16sl {
+    columns: 2 200px; /* Each column at least 200px */
+    column-gap: 2rem;
+  }
+}
+
+/* --- SUBSECTION STYLING --- */
+.ServiceDetail_subsectionBlock__rl7VO {
+  margin-top: 1.75rem;
+  padding-left: 1rem; /* Indent subsections */
+  border-left: 2px solid var(--color-primary-light); /* Subtle accent border */
+  margin-bottom: 1.5rem;
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_subsectionBlock__rl7VO {
+  border-left-color: var(--color-primary-dark);
+}
+.ServiceDetail_subsectionTitle__ZtvrP { /* H3s */
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.ServiceDetail_subsectionDescription__hZENf {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+/* --- WHY CHOOSE US & PROCESS --- */
+.ServiceDetail_whyChooseUsBlock__Qxei0 {} /* No specific background, blends with article */
+.ServiceDetail_processBlock__GJ0Bo {} /* No specific background */
+
+.ServiceDetail_orderedList__DkKTF {} /* Base for numbered lists */
+.ServiceDetail_orderedListItem__fdH3v {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.ServiceDetail_stepNumber__7U1wL {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+  font-size: 0.95rem; /* Font size for the number itself */
+}
+.ServiceDetail_orderedListItem__fdH3v p {
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+/* --- FINAL CTA SECTION --- */
+.ServiceDetail_finalCallToActionSection__HDiI2 {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  background-color: var(--color-card-bg); /* Subtle background for emphasis */
+  border-radius: 8px; /* Rounded corners for this block */
+}
+html.ServiceDetail_dark__n6Kvt .ServiceDetail_finalCallToActionSection__HDiI2 {
+  background-color: var(--color-card-bg-dark);
+  border-top-color: var(--color-border-dark);
+}
+.ServiceDetail_finalCallToActionSection__HDiI2 .ServiceDetail_blockTitle__fz1gv { /* Re-style title if needed within this block */
+  border-bottom: none; /* Remove border if centered */
+  display: block; /* Allow centering */
+  margin-bottom: 1rem;
+}
+.ServiceDetail_finalCallToActionSection__HDiI2 .ServiceDetail_blockDescription__P_PsR {
+  margin-bottom: 2rem;
+  max-width: 650px; /* Constrain line length */
+  margin-left: auto;
+  margin-right: auto;
+}
+.ServiceDetail_finalButtons__4WZi0 {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* More space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  margin-top: 1.5rem;
+}
+.ServiceDetail_finalCtaButton__hMMX5 {
+  /* Uses global .btn. Add specific overrides or ensure global .btn is sufficient. */
+}
+.ServiceDetail_finalCtaButton__hMMX5 svg { /* For Iconify icons in buttons */
+  vertical-align: middle; /* Better alignment */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) { /* Tablet and below - stack sidebar */
+  .ServiceDetail_pageLayoutContainer__PClEb {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .ServiceDetail_sidebar__25JGl {
+    flex: none; /* Reset flex sizing */
+    width: 100%;
+    max-width: none;
+    order: -1; /* Moves sidebar to top on mobile */
+  }
+  .ServiceDetail_sidebarStickyContent__Lyi6t {
+    position: static; /* No sticky on mobile */
+  }
+  .ServiceDetail_mainContentArea__CNpN4 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile general */
+  .ServiceDetail_hero__1UNBN {
+    padding: 3.5rem 1rem 3rem 1rem;
+  }
+  .ServiceDetail_heroTitle__b_nFi {
+    font-size: 2.2rem;
+  }
+  .ServiceDetail_heroSubtitle__t7eP_ {
+    font-size: 1rem;
+  }
+  .ServiceDetail_serviceContentArticle__CJHs7 {
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+  }
+  .ServiceDetail_mainContentTitle__h7rpc {
+    font-size: 1.9rem;
+  }
+  .ServiceDetail_blockTitle__fz1gv {
+    font-size: 1.6rem;
+  }
+  .ServiceDetail_subsectionTitle__ZtvrP {
+    font-size: 1.3rem;
+  }
+}
+
